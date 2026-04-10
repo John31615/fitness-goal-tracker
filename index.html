@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Fitness Tracker</title>
+    <link rel="icon" type="image/x-icon" href="Gymfit images/Logo.webp"> <!-- Favicon -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <!-- Chart.js for Visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+   <nav class="navbar navbar-expand-lg sticky-top">
+          <div class="container-fluid">
+              <!-- Logo and Brand Name -->
+              <a class="navbar-brand" href="Home.html">
+                  <img src="Gymfit images/Logo.webp" alt="GymFit Logo" height="44" width="44">
+                  GYMFIT
+              </a>
+      
+              <!-- Toggler for Mobile -->
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                      data-bs-target="#navbarNav" aria-controls="navbarNav" 
+                      aria-expanded="false" aria-label="Toggle navigation">
+                  <!--<span class="navbar-toggler-icon"></span>-->
+                  <img src="images/menu--v2.png" alt="GymFit Logo" height="30" width="30">
+              </button>
+      
+              <!-- Navigation Items -->
+              <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                  <ul class="navbar-nav">
+                      <li class="nav-item">
+                          <a class="nav-link" aria-current="page" href="Home.html">Home</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link active" href="index.html">Log Workouts</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="statistics.html">Stats</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="Goals.html">Goals</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="favorites.html">Favorite</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="achivements.html">Achievements</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>    
+    <!-- Hero Section -->
+    <div class="content">
+        <section class="hero text-center text-white">
+            <div class="hero-section">
+                <h1>Track Your Workouts & Goals</h1>
+                <p>Stay motivated, track progress, and achieve your fitness goals!</p>
+            </div>
+        </section>
+
+        <div class="achievement">
+            <span class="Achivement-circle">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span class="Achivement-logo"></span>
+            </span>
+            <span class="Achivement-text">Achievement unlocked!<br/>
+            <P id="Achivement-message">Thank you for using our website!</P></span>
+          
+        </div>
+
+        
+    <!-- Workout Logging Form -->
+    <div class="container mt-4" id="logWorkout">
+        <h2>Log Your Workout</h2>
+        <form id="workoutForm">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Workout Type</label>
+                    <select class="form-control" id="workoutType" required>
+                        <option value="Running">Running</option>
+                        <option value="Cycling">Cycling</option>
+                        <option value="Strength Training">Strength Training</option>
+                        <option value="Aerobics">Aerobics</option>
+                        <option value="Pilates">Pilates</option>
+                        <option value="Swimming">Swimming</option>
+                        <option value="Yoga">Yoga</option>
+                        <option value="Balance Workout">Balance Workout</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Duration (minutes)</label>
+                    <input type="number" class="form-control" id="duration" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Weight (kg)</label>
+                    <input type="number" class="form-control" id="weight" required>
+                </div>
+                <div class="form-group">
+                    <label>Date</label>
+                    <input type="date" class="form-control" id="workoutDate" required>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Log Workout</button>
+        </form>
+        <br>
+    </div>
+
+        <!-- Workout Display -->
+        
+    <div class="container mt-4">
+        <h2>Workout Log</h2>
+        <div class="button-container"> <!-- Container to center the button -->
+            <button id="viewWorkoutsBtn" class="btn btn-primary">View Workout Logs</button>
+        </div>
+        <div id="workoutSection" style="display: none;">
+            <ul id="workoutList" class="list-group mt-3"></ul>
+        </div>
+        <ul class="list-group" id="workoutList"></ul>
+        <br>
+    </div>
+</div>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>

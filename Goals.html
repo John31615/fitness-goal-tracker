@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>GYMFIT</title>
+        <link rel="icon" type="image/x-icon" href="Gymfit images/Logo.webp"> <!-- Favicon -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <!-- Chart.js for Visualizations -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+    
+<!-- Navigation Menu -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container-fluid">
+        <!-- Logo and Brand Name -->
+        <a class="navbar-brand" href="Home.html">
+            <img src="Gymfit images/Logo.webp" alt="GymFit Logo" height="44" width="44">
+            GYMFIT
+        </a>
+
+        <!-- Toggler for Mobile -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                data-bs-target="#navbarNav" aria-controls="navbarNav" 
+                aria-expanded="false" aria-label="Toggle navigation">
+            <!--<span class="navbar-toggler-icon"></span>-->
+            <img src="images/menu--v2.png" alt="GymFit Logo" height="30" width="30">
+        </button>
+
+        <!-- Navigation Items -->
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="Home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Log Workouts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="statistics.html">Stats</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="Goals.html">Goals</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="favorites.html">Favorite</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="achivements.html">Achievements</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>    
+
+<div class="content">
+    <div class="banner-wrap vh-100 vw-100 d-flex align-items-center justify-content-center text-white">
+        <main class="text-center">
+            <div class="container mt-4" id="logGoals">
+                <h2>Log Your Fitness Goals</h2>
+                <form id="goalForm">
+                    <!-- Exercise Selection -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Exercise Type</label>
+                            <select class="form-control" id="goalExercise" required>
+                                <option value="Running">Running</option>
+                                <option value="Cycling">Cycling</option>
+                                <option value="Strength Training">Strength Training</option>
+                                <option value="Aerobics">Aerobics</option>
+                                <option value="Pilates">Pilates</option>
+                                <option value="Swimming">Swimming</option>
+                                <option value="Yoga">Yoga</option>
+                                <option value="Balance Workout">Balance Workout</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Duration (minutes)</label>
+                            <input type="number" class="form-control" id="goalDuration" placeholder="Enter minutes" required>
+                        </div>
+                    </div>
+
+                    <!-- Weight Loss Goal -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Target Weight (kg)</label>
+                            <input type="number" class="form-control" id="goalWeightLoss" placeholder="Enter weight loss goal" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Start Date</label>
+                            <input type="date" class="form-control" id="goalStartDate" required>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary">Save Goals</button>
+                </form>
+                <br>
+            </div>
+
+            <!-- Goal Display Section -->
+            <div class="container mt-4">
+                <h2>Saved Goals</h2>
+                <div class="button-container">
+                    <button id="viewGoalsBtn" class="btn btn-primary">View My Goals</button>
+                </div>
+                <br>
+                <ul class="list-group" id="goalList"></ul>
+                <br>
+            </div>
+
+            <!-- Progress Section -->
+            <div class="container mt-4">
+                <h2>Progress</h2>
+                <div class="button-container">
+                    <button id="viewProgressBtn" class="btn btn-primary">View Progress</button>
+                </div>       
+                <div id="progressSection" style="display: none;">
+                    <div class="card">
+                        <div class="card-body">
+                            <ul id="progressList" class="list-group mt-3"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<!-- JavaScript -->
+<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+<script src="js/script.js" defer></script>      
+</body>
+</html>

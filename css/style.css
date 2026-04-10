@@ -1,0 +1,448 @@
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/Background.avif'); /* Using .avif from Code 1, override with .png if preferred */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}
+
+.content{
+    opacity: 0; 
+    animation: fadeIn 1s ease-in-out forwards;
+}
+      
+@keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+
+/* Navbar Styling */
+.navbar {
+    background-color: #343a40;
+    padding: 15px;
+    position: fixed; /* Sticky navbar from Code 1 */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar-collapse {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+
+.navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+}
+
+.navbar a {
+    color: #e0e0e0;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+
+.navbar-brand:hover img {
+    transform: scale(1.1);
+}
+
+.nav-link {
+    color: #ffffff;    
+    margin-left: 40px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #e74c3c;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: rgb(255, 166, 0);
+}
+
+
+.nav-link.active {
+    color: #e74c3c !important;
+}
+
+
+.navbar-brand img {
+    margin-right: 10px; /* Added from Code 1 */
+}
+
+/* Mobile Navbar Toggler */
+.navbar-toggler {
+    border-color: rgba(0, 0, 0, 0.2);
+    width: 10%;
+}
+
+/* Container Styling */
+.container {
+    background: #2c2c2c84;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px auto;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
+    color: #e0e0e0;
+}
+
+/* Achievements Container Styling */
+.containerACV {
+    background: #2c2c2c84;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px auto;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
+    color: #e0e0e0;
+}
+
+/* Container for Progress Bars */
+.containerBar {
+    background: #2c2c2c84;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px auto;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
+    color: #be3131; /* From Code 2 */
+}
+
+/* Headings */
+h2 {
+    text-align: center;
+    color: #ff8c00;
+    font-weight: bolder;
+}
+
+/* Form Styling (for both #workoutForm and #goalForm) */
+#workoutForm, #goalForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+#workoutForm input,
+#workoutForm select,
+#goalForm input,
+#goalForm select {
+    padding: 10px;
+    border: 1px solid #6d6b6b;
+    border-radius: 7px;
+    background-color: #3a3a3a;
+    color: #e0e0e0;
+}
+
+#workoutForm button,
+#goalForm button {
+    background-color: #ff8c00;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+#workoutForm button:hover,
+#goalForm button:hover {
+    background-color: #e07b00;
+}
+
+#goalList {
+    display: none; /* Hide by default */
+    color: #e0e0e0; 
+}
+
+/* Goal and List Items */
+.goal-item {
+    background-color: #3a3a3a;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.list-group-item {
+    display: flex;
+    justify-content: space-between; /* From Code 1 */
+    align-items: center; /* From Code 1 */
+    background: #3a3a3a;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 5px; /* From Code 1 */
+    border: 1px solid #6d6b6b; /* From Code 1 */
+    color: #e0e0e0; /* Overwrites Code 2's #1f1f1f for consistency */
+}
+
+.list-group-item strong {
+    font-size: 16px; /* From Code 1 */
+    flex-grow: 1; /* From Code 1 */
+}
+
+/* Button Group for Delete and Favorite */
+.list-group-item .button-group {
+    display: flex;
+    gap: 5px; /* From Code 1 */
+}
+
+.btn-sm {
+    font-size: 12px; /* From Code 1 */
+    padding: 5px 10px; /* From Code 1 */
+    border-radius: 5px; /* From Code 1 */
+}
+
+/* Chart Styling */
+#workoutChart {
+    max-width: 100%;
+    height: 400px !important;
+    margin-bottom: 50px !important;
+}
+
+/* Hero Section */
+.hero-section {
+    margin: 20px auto;
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    color: #ffffff;
+    border-radius: 8px;
+    max-width: 98%;
+}
+
+/* Button Container and Buttons */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#viewWorkoutsBtn,
+#viewGoalsBtn,
+#viewProgressBtn {
+    background-color: #ff8c00;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: background-color 0.3s;
+    width: fit-content;
+}
+
+#viewWorkoutsBtn:hover,
+#viewGoalsBtn:hover,
+#viewProgressBtn:hover {
+    background-color: #e07b00;
+}
+
+/* Progress Section */
+.card {
+    background-color: #3a3a3a;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 800px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Status Indicators (used by JS) */
+.star {
+    color: gold;
+}
+
+.in-progress {
+    color: orange;
+}
+
+.not-met {
+    color: red;
+}
+
+/* Specific Element Colors */
+#workoutList, #favoriteList {
+    color: #e0e0e0; /* Overwrites Code 2's #1f1f1f for consistency */
+}
+
+#totalWorkouts, #totalCalories, #averageDuration {
+    color: #e0e0e0;
+}
+
+/* Banner Wrap */
+.banner-wrap {
+    margin-top: 75px; /* From Code 1 */
+}
+
+/* Achievement Popup */
+.achievement {
+    width: 64px;
+    height: 64px;
+    background-color: #4d4d4d;
+    border-radius: 32px;
+    position: absolute;
+    -webkit-transition: width 1s;
+    transition: width 1s;
+    overflow: hidden;
+}
+
+.achievement.out {
+    width: 422px;
+}
+
+.Achivement-circle {
+    background: #1a1a1a;
+    width: 58px;
+    height: 58px;
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    border-radius: 30px;
+}
+
+.Achivement-circle span:not(.Achivement-logo) {
+    display: block;
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    background-color: #494949;
+    left: 3px;
+    top: 3px;
+}
+
+.Achivement-circle span:nth-child(1) {
+    border-radius: 25px 0 0 0;
+    -moz-border-radius: 25px 0 0 0;
+    -webkit-border-radius: 25px 0 0 0;
+    background-color: #75aa1e; /* Green bar from both codes */
+}
+
+.Achivement-circle span:nth-child(2) {
+    border-radius: 0px 25px 0 0;
+    -moz-border-radius: 0 25px 0 0;
+    -webkit-border-radius: 0 25px 0 0;
+    left: 30px;
+}
+
+.Achivement-circle span:nth-child(3) {
+    border-radius: 0 0 25px 0;
+    -moz-border-radius: 0 0 25px 0;
+    -webkit-border-radius: 0 0 25px 0;
+    left: 30px;
+    top: 30px;
+}
+
+.Achivement-circle span:nth-child(4) {
+    border-radius: 0 0 0 25px;
+    -moz-border-radius: 0 0 0 25px;
+    -webkit-border-radius: 0 0 0 25px;
+    top: 30px;
+}
+
+.Achivement-logo {
+    left: 12px;
+    top: 12px;
+    background-image: url("../images/TotallyNotXbox.png");
+    background-size: 30px;
+    position: absolute;
+    display: block;
+    height: 35px;
+    width: 35px;
+    border: 2px solid #161616;
+    border-radius: 35px;
+}
+
+.Achivement-text {
+    position: absolute;
+    left: 85px;
+    color: #ff8c00;
+    font-size: 1.35em;
+    white-space: nowrap;
+}
+
+/* Achievements Page Specific */
+#achivements-nav-body {
+    margin-top: 0px; /* From Code 1 */
+}
+
+/* Progress Bars for Achievements */
+.ACVprogress-container {
+    color: whitesmoke;
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.ACVprogress-bar {
+    height: 10px;
+    background-color: #4CAF50 !important;
+    border-radius: 5px;
+}
+
+#bodyACV
+{
+    background-color: #161616;
+}   
+
+/* #ACVworkoutProgress,
+#ACVcalorieProgress,
+#ACVminuteProgress  */
+    /* These are dynamically styled in JS, no additional static styles needed */
+
+      
