@@ -83,12 +83,13 @@ Through this project, I strengthened my skills in:
 
 ---
 
-## 👤 Author
+## 👥 Contributors
 
-Enock Mntungwa
-Arnold Mabope
-Jean Paul Smit
-Mokhele Moletsane
+* Enock Mntungwa
+* Arnold Mabope
+* Jean Paul Smit
+* Mokhele Moletsane
+
 
 Developed as part of a web programming course project.
 
